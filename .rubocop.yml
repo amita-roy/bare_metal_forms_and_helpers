@@ -2,6 +2,8 @@ AllCops:
   Exclude:
     - 'Guardfile'
     - 'Rakefile'
+    - 'Gemfile'
+    - 'node_modules'
 
   DisplayCopNames: true
 
