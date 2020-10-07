@@ -1,0 +1,30 @@
+<%= form_for user do |form| %>
+
+    <% if user.errors.any? %>
+  <section class="errors">
+    <h2>
+      Oops! Your form could not be saved.
+    </h2>
+    <h3>
+      Please correct the following
+      <%= pluralize(user.errors.size, "error") %>:
+    </h3>
+    <ul>
+      <% user.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+    </ul>
+  </section>
+<% end %>
+
+   <%= form.label :username %>
+    <%= form.text_field :username, placeholder: "Username here" %><br><br>
+
+    <%= form.label :email %>
+    <%= form.email_field :email, placeholder: "abc@example.com" %><br><br>
+
+    <%= form.label :password %>
+    <%= form.password_field :password %><br><br>
+
+  <%= form.submit 'Submit'%>
+<% end %>
